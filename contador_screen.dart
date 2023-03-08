@@ -11,6 +11,21 @@ class CounterScreen extends StatefulWidget {
 class _CounterScreenState extends State<CounterScreen> {
   // identificar widget
   int c = 0;
+  void increase() {
+    c++;
+    setState(() {});
+  }
+
+  void decrease() {
+    c--;
+    setState(() {});
+  }
+
+  void reset() {
+    c = 0;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     //arbol de widgets
@@ -39,38 +54,50 @@ class _CounterScreenState extends State<CounterScreen> {
       ),
       floatingActionButtonLocation:
           FloatingActionButtonLocation.centerDocked, //poscicionar button
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          FloatingActionButton(
-            child: const Icon(Icons.add),
-            onPressed: () {
-              c++;
-              setState(() {}); // cambio interno en el estado, se redibuja
-            },
-            backgroundColor: Colors.green,
-          ),
-          //const SizedBox(width: 20), // separaciones
-          FloatingActionButton(
-            child: const Icon(Icons.restart_alt),
-            onPressed: () {
-              c = 0;
-              setState(() {}); // cambio interno en el estado, se redibuja
-            },
-            backgroundColor: Colors.green,
-          ),
-
-          FloatingActionButton(
-            child: const Icon(Icons.remove),
-            onPressed: () {
-              c--;
-              setState(() {}); // cambio interno en el estado, se redibuja
-            },
-            backgroundColor: Colors.green,
-          ),
-        ],
+      floatingActionButton: CustomFloatingActions(
+        increaseFn: increase,
+        decreaseFn: decrease,
+        resetFn: reset, // se manda la referencia no la ejecuta
       ),
+    );
+  }
+}
+
+class CustomFloatingActions extends StatelessWidget {
+  final Function increaseFn;
+  final Function decreaseFn;
+  final Function resetFn;
+  const CustomFloatingActions({
+    super.key,
+    required this.increaseFn,
+    required this.decreaseFn,
+    required this.resetFn,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () => increaseFn(),
+          backgroundColor: Colors.green,
+        ),
+        //const SizedBox(width: 20), // separaciones
+        FloatingActionButton(
+          child: const Icon(Icons.restart_alt),
+          onPressed: () => resetFn(),
+          backgroundColor: Colors.green,
+        ),
+
+        FloatingActionButton(
+          child: const Icon(Icons.remove),
+          onPressed: () => decreaseFn(),
+          backgroundColor: Colors.green,
+        ),
+      ],
     );
   }
 }
