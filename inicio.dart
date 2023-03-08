@@ -1,17 +1,20 @@
 
 void main() {
-// clase abtracta es una clase que no se puede instanciar o inicializar
- perro.emitirSonido();
+  final superan = new Heroe('Clarck');
+  
 }
 
-abstract class Animal{ // obligar a clase a utilizar esas caracterizticas
- int? patas;
- void emitirSonido();
-
+abstract class Personaje {
+  String? poder;
+  String nombre;
+  Personaje(this.nombre); //constructor
+  @override
+  String toString() {
+    return '$nombre - $poder';
+  }
 }
-class Perro implements Animal {
- int? patas
- void emitirSonido(){
-  print('Guau')
- }
+
+class Heroe extends Personaje {
+  Heroe(String nombre): super(nombre);//: para que se ejecute al momento de inicializar clase
+  //super llamado a contructor de la clase abstracta 
 }
