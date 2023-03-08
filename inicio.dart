@@ -1,11 +1,14 @@
 void main() {
-  //listas
-  List<int> numeros =[1,2,3,4];
-  //metodos de listas
-  //si no se define el tipo de dato puede recibir lo que sea <int>
-  numeros.add(5);
-  
-  final masNumeros= List.generate(100,(int index) =>index);
-  //() => funcion que retorna el index
-  print( numeros);
+  Map persona = {
+    // definir tipo de datos Map<String(llave), String (dato)>
+    'nombre':'Fernando',
+    'edad': 35,
+    'soltero':false,
+    true : false,
+    1:100,
+    2:500
+  };
+  print(persona['nombre'];
+  persona.addAll({3:'juan'});
+  print(persona[2];
 }
