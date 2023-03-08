@@ -1,20 +1,62 @@
+abstract class Animal {}
+
+abstract class Mamifero extends Animal {}
+
+abstract class Ave extends Animal {}
+
+abstract class Pez extends Animal {}
+
+//Mixiin cractaeirsticas especificas
+abstract class Volador {
+  void volar() => print("volador");
+}
+
+abstract class Caminantes {
+  void caminar() => print("caminante");
+}
+
+abstract class Nadador {
+  void nadar() => print("nadar");
+}
+
+class Delfin extends Mamifero with Nadador {
+  // mixins se reconocen con with
+}
+
+class Murcielago extends Mamifero with Caminantes, Volador {
+  // mixins se reconocen con with
+}
+
+class Gato extends Mamifero with Caminantes {
+  // mixins se reconocen con with
+}
+
+class Dove extends Ave with Caminantes, Volador {
+  // mixins se reconocen con with
+}
+
+class Pato extends Ave with Caminantes, Volador, Nadador {
+  // mixins se reconocen con with
+}
+
+class Tiburon extends Pez with Nadador {
+  // mixins se reconocen con with
+}
+
+class PezVolador extends Pez with Nadador, Volador {
+  // mixins se reconocen con with
+}
 
 void main() {
-  final superan = new Heroe('Clarck');
-  
-}
+  final d = new Delfin();
+  d.nadar();
 
-abstract class Personaje {
-  String? poder;
-  String nombre;
-  Personaje(this.nombre); //constructor
-  @override
-  String toString() {
-    return '$nombre - $poder';
-  }
-}
+  final m = new Murcielago();
+  m.caminar();
+  m.volar();
 
-class Heroe extends Personaje {
-  Heroe(String nombre): super(nombre);//: para que se ejecute al momento de inicializar clase
-  //super llamado a contructor de la clase abstracta 
+  final p = new Pato();
+  p.caminar();
+  p.nadar();
+  p.volar();
 }
