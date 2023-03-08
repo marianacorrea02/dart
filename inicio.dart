@@ -1,9 +1,9 @@
 void main() {
-  //String
-  var nombre='tony';
-  var apellido='stark';
-  print(nombre);
-  print('$nombre $apellido');
-  int empleados=10;
-  double salario=19.000;
+  //puede tener valores nulos ?
+  bool? isActive = null;
+  if( isActive == null){
+    print('Esta activo');
+  }else{
+    print('Esta inactivo');
+  }
 }
