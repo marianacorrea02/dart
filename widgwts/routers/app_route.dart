@@ -1,14 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/models/models.dart';
 import 'package:flutter_application_2/screens/screens.dart';
 
 class AppRoutes {
   static const home = 'home';
-  static Map<String, Widget Function(BuildContext)> routes = {
+  static final menuOptions = <MenuOption>[
+    MenuOption(
+        route: 'home',
+        icon: Icons.ac_unit_outlined,
+        name: 'Primera',
+        screen: const HomeScreen()),
+    MenuOption(
+        route: 'alert',
+        icon: Icons.access_alarm_outlined,
+        name: 'Segunda',
+        screen: const AlertScreen()),
+    MenuOption(
+        route: 'listView1',
+        icon: Icons.accessibility_new_outlined,
+        name: 'Tercera',
+        screen: const Listview1Screen()),
+    MenuOption(
+        route: 'card',
+        icon: Icons.account_balance_rounded,
+        name: 'Cuarta',
+        screen: const CardScreen()),
+  ];
+  static Map<String, Widget Function(BuildContext)> getAppRoutes() {
+    Map<String, Widget Function(BuildContext)> appRoutes = {};
+    for (final option in menuOptions) {
+      appRoutes.addAll({option.route: (BuildContext context) => option.screen});
+    }
+    return appRoutes;
+  }
+
+  /*static Map<String, Widget Function(BuildContext)> routes = {
     'home': (BuildContext context) => const HomeScreen(),
     'listView1': (BuildContext context) => const Listview1Screen(),
-    'alertScreen': (BuildContext context) => const AlertScreen(),
-    'cardScreen': (BuildContext context) => const CardScreen(),
-  };
+    'alert': (BuildContext context) => const AlertScreen(),
+    'card': (BuildContext context) => const CardScreen(),
+  };*/
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(
       builder: (context) => AlertScreen(),
