@@ -15,13 +15,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Material App',
-        //home: const CardScreen(),
-        // para navegar entre rutas
-        initialRoute: AppRoutes.home,
-        // definir rutas de pantallas
-        routes: AppRoutes.getAppRoutes(),
-        //por si la ruta no existe
-        onGenerateRoute: AppRoutes.onGenerateRoute);
+      title: 'Material App',
+      //home: const CardScreen(),
+      // para navegar entre rutas
+      initialRoute: AppRoutes.home,
+      // definir rutas de pantallas
+      routes: AppRoutes.getAppRoutes(),
+      //por si la ruta no existe
+      onGenerateRoute: AppRoutes.onGenerateRoute,
+      //temas de estilos
+      theme: AppTheme.lightTheme,
+    );
   }
 }
