@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         // para navegar entre rutas
         initialRoute: AppRoutes.home,
         // definir rutas de pantallas
-        routes: AppRoutes.routes,
+        routes: AppRoutes.getAppRoutes(),
         //por si la ruta no existe
         onGenerateRoute: AppRoutes.onGenerateRoute);
   }
