@@ -8,8 +8,12 @@ class AppTheme {
   static const TextStyle fontGravity = TextStyle(fontFamily: 'TW Cent MT');
 
   static final ThemeData lightTheme = ThemeData.light().copyWith(
-    appBarTheme: const AppBarTheme(
-      color: blueGravity,
-    ),
-  );
+
+      //app bar theme
+      appBarTheme: const AppBarTheme(
+        color: blueGravity,
+      ),
+      // text buttom them
+      textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(foregroundColor: greenGravity)));
 }
