@@ -18,7 +18,16 @@ class CardScreen extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          CustomCartType2()
+          CustomCartType2(
+              name: 'prueba',
+              imageUrl:
+                  'https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+          CustomCartType2(
+              imageUrl:
+                  'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+          CustomCartType2(
+              imageUrl:
+                  'https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
         ],
       ),
     );
