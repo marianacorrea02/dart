@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/screens/listview_screen.dart';
+import 'package:flutter_application_2/router/app_routes.dart';
+import 'package:flutter_application_2/screens/home_screen.dart';
+
+// se quitan los imports y se ponen en el archivo sreen.dart
+
+// se importa el archivo screens.dart
+import 'package:flutter_application_2/screens/screens.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,6 +14,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(title: 'Material App', home: Listview1Screen());
+    return MaterialApp(
+        title: 'Material App',
+        //home: const CardScreen(),
+        // para navegar entre rutas
+        initialRoute: AppRoutes.home,
+        // definir rutas de pantallas
+        routes: AppRoutes.routes,
+        //por si la ruta no existe
+        onGenerateRoute: AppRoutes.onGenerateRoute);
   }
 }
