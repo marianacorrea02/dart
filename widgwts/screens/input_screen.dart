@@ -38,10 +38,11 @@ class InputScreen extends StatelessWidget {
                 decoration: const InputDecoration(
                   hintText: 'Nombre de Usuario',
                   labelText: 'Nombre',
-                  border: OutlineInputBorder(
+                  /*border: OutlineInputBorder(
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(10),
-                          topRight: Radius.circular(10))),
+                          topRight: Radius.circular(10))),*/
+
                   helperText: 'Aqui va su nombre de usuario',
                 ),
               ),
