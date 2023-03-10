@@ -32,34 +32,42 @@ class InputScreen extends StatelessWidget {
             child: Column(
               children: [
                 //formularios mas interaccioene
-                const CustomImputField(
+                CustomImputField(
                   labelText: 'nombre',
                   helperText: 'Aqui va su nombre',
                   hintText: "Nombre de usuario",
                   icon: Icons.abc,
                   textCapitalization: TextCapitalization.words,
+                  formProperty: 'first',
+                  formValues: formValues,
                 ),
                 const SizedBox(height: 30),
-                const CustomImputField(
+                CustomImputField(
                   labelText: 'apellido',
                   helperText: 'Aqui va su apellido',
                   hintText: "Apellido de usuario",
                   textCapitalization: TextCapitalization.words,
+                  formProperty: 'last',
+                  formValues: formValues,
                 ),
                 const SizedBox(height: 30),
-                const CustomImputField(
+                CustomImputField(
                   labelText: 'Email',
                   helperText: 'Aqui va su correo',
                   hintText: "correp de usuario",
                   keyboardType: TextInputType.emailAddress,
+                  formProperty: 'email',
+                  formValues: formValues,
                 ),
                 const SizedBox(height: 30),
-                const CustomImputField(
+                CustomImputField(
                   labelText: 'Contraseña',
                   helperText: 'Aqui va su contraseña',
                   hintText: "contraseña de usuario",
                   keyboardType: TextInputType.emailAddress,
                   isPassword: true,
+                  formProperty: 'password',
+                  formValues: formValues,
                 ),
                 ElevatedButton(
                     onPressed: () {
@@ -70,6 +78,7 @@ class InputScreen extends StatelessWidget {
                         print('formulario no valido');
                         return;
                       }
+                      print(formValues);
                     },
                     child: const SizedBox(
                         width: double.infinity,
