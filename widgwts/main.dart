@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/router/app_routes.dart';
+import 'package:flutter_application_2/theme/app_theme.dart';
 import 'package:flutter_application_2/screens/home_screen.dart';
 
 // se quitan los imports y se ponen en el archivo sreen.dart
