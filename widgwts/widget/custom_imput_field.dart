@@ -9,6 +9,8 @@ class CustomImputField extends StatelessWidget {
   // el typo de teclado cambie para correo
   final TextInputType? keyboardType;
   final TextCapitalization textCapitalization;
+  //contraseña en puntos
+  final bool isPassword;
   const CustomImputField({
     super.key,
     this.hintText,
@@ -17,7 +19,8 @@ class CustomImputField extends StatelessWidget {
     this.icon,
     this.suffixicon,
     this.keyboardType,
-    required this.textCapitalization,
+    this.textCapitalization = TextCapitalization.none,
+    this.isPassword = false,
   });
 
   @override
@@ -26,6 +29,8 @@ class CustomImputField extends StatelessWidget {
       // al cambiar de pantalla se enfoca en el espacio a llenars
       autofocus: true,
       initialValue: '',
+      //tapar contraseña
+      obscureText: isPassword,
       //combiar tipo de teclado
       keyboardType: keyboardType,
       //empezar cada palabra con capital
