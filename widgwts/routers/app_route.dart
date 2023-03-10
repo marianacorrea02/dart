@@ -8,22 +8,22 @@ class AppRoutes {
     MenuOption(
         route: 'home',
         icon: Icons.ac_unit_outlined,
-        name: 'Primera',
+        name: 'Inicio',
         screen: const HomeScreen()),
     MenuOption(
         route: 'alert',
         icon: Icons.access_alarm_outlined,
-        name: 'Segunda',
+        name: 'Alerta',
         screen: const AlertScreen()),
     MenuOption(
         route: 'listView1',
         icon: Icons.accessibility_new_outlined,
-        name: 'Tercera',
+        name: 'Lista de nombres',
         screen: const Listview1Screen()),
     MenuOption(
         route: 'card',
         icon: Icons.account_balance_rounded,
-        name: 'Cuarta',
+        name: 'Cards',
         screen: const CardScreen()),
   ];
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
