@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/models/models.dart';
-import 'package:flutter_application_2/screens/input_screen.dart';
 import 'package:flutter_application_2/screens/screens.dart';
+import 'package:flutter_application_2/screens/slider_screen.dart';
 
 class AppRoutes {
   static const home = 'home';
@@ -31,11 +31,16 @@ class AppRoutes {
         icon: Icons.add_a_photo,
         name: 'Animado',
         screen: const AnimatedScreen()),
-     MenuOption(
+    MenuOption(
         route: 'input',
         icon: Icons.abc_sharp,
         name: 'Input',
         screen: const InputScreen()),
+    MenuOption(
+        route: 'slider',
+        icon: Icons.sledding_sharp,
+        name: 'Slider',
+        screen: const SliderScreen()),
   ];
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
