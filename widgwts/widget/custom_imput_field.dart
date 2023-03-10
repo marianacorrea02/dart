@@ -11,6 +11,10 @@ class CustomImputField extends StatelessWidget {
   final TextCapitalization textCapitalization;
   //contraseña en puntos
   final bool isPassword;
+  //stado del formulario
+  final String formProperty;
+  //listado de datos recibidos del formulario
+  final Map<String, String> formValues;
   const CustomImputField({
     super.key,
     this.hintText,
@@ -21,6 +25,8 @@ class CustomImputField extends StatelessWidget {
     this.keyboardType,
     this.textCapitalization = TextCapitalization.none,
     this.isPassword = false,
+    required this.formProperty,
+    required this.formValues,
   });
 
   @override
@@ -37,7 +43,7 @@ class CustomImputField extends StatelessWidget {
       textCapitalization: textCapitalization,
       //capturar el valor
       onChanged: (value) {
-        print('value:$value');
+        formValues[formProperty] = value;
       },
       //
       validator: (value) {
