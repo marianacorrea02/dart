@@ -6,7 +6,9 @@ class CustomImputField extends StatelessWidget {
   final String? helperText;
   final IconData? icon;
   final IconData? suffixicon;
-
+  // el typo de teclado cambie para correo
+  final TextInputType? keyboardType;
+  final TextCapitalization textCapitalization;
   const CustomImputField({
     super.key,
     this.hintText,
@@ -14,6 +16,8 @@ class CustomImputField extends StatelessWidget {
     this.helperText,
     this.icon,
     this.suffixicon,
+    this.keyboardType,
+    required this.textCapitalization,
   });
 
   @override
@@ -22,8 +26,10 @@ class CustomImputField extends StatelessWidget {
       // al cambiar de pantalla se enfoca en el espacio a llenars
       autofocus: true,
       initialValue: '',
+      //combiar tipo de teclado
+      keyboardType: keyboardType,
       //empezar cada palabra con capital
-      textCapitalization: TextCapitalization.words,
+      textCapitalization: textCapitalization,
       //capturar el valor
       onChanged: (value) {
         print('value:$value');
