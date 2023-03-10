@@ -8,12 +8,26 @@ class AppTheme {
   static const TextStyle fontGravity = TextStyle(fontFamily: 'TW Cent MT');
 
   static final ThemeData lightTheme = ThemeData.light().copyWith(
+    //app bar theme
+    appBarTheme: const AppBarTheme(
+      color: blueGravity,
+    ),
+    // text buttom them
+    textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(foregroundColor: greenGravity)),
 
-      //app bar theme
-      appBarTheme: const AppBarTheme(
-        color: blueGravity,
-      ),
-      // text buttom them
-      textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(foregroundColor: greenGravity)));
+    //FloatingActionButtons
+
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: greenGravity,
+    ),
+
+    // ElevatedActionButtons
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+      backgroundColor: greenGravity,
+      shape: const StadiumBorder(),
+    )),
+  );
 }
