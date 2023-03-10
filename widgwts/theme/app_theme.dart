@@ -21,7 +21,29 @@ class AppTheme {
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: greenGravity,
     ),
-
+    //Estilo formulario input
+    inputDecorationTheme: const InputDecorationTheme(
+        floatingLabelStyle: TextStyle(color: greenGravity),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: greenGravity),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+            )),
+        //para que se vea la caja en el imput
+        focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: greenGravity),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+            )),
+        //para cuando no tienen borde
+        border: OutlineInputBorder(
+            borderSide: BorderSide(color: greenGravity),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+            ))),
     // ElevatedActionButtons
 
     elevatedButtonTheme: ElevatedButtonThemeData(
