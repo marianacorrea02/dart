@@ -44,6 +44,11 @@ class AppTheme {
               bottomLeft: Radius.circular(10),
               bottomRight: Radius.circular(10),
             ))),
+    //slider
+    sliderTheme: SliderThemeData(
+      activeTrackColor: greenGravity,
+      thumbColor: greenGravity,
+    ),
     // ElevatedActionButtons
 
     elevatedButtonTheme: ElevatedButtonThemeData(
