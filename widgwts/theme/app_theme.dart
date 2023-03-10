@@ -27,7 +27,8 @@ class AppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
       backgroundColor: greenGravity,
-      shape: const StadiumBorder(),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusDirectional.circular(10)),
     )),
   );
 }
