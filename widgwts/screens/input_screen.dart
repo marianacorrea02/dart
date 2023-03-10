@@ -69,6 +69,27 @@ class InputScreen extends StatelessWidget {
                   formProperty: 'password',
                   formValues: formValues,
                 ),
+                //menu de seleccion para formularios
+                DropdownButtonFormField(
+                  items: const [
+                    DropdownMenuItem(
+                      value: 'Admin',
+                      child: Text('Admin'),
+                    ),
+                    DropdownMenuItem(
+                      value: 'Usuario',
+                      child: Text('usuario'),
+                    ),
+                    DropdownMenuItem(
+                      value: 'no Admin',
+                      child: Text('no Admin'),
+                    ),
+                  ],
+                  onChanged: (value) {
+                    print(value);
+                    formValues['role'] = value ?? 'no admin';
+                  },
+                ),
                 ElevatedButton(
                     onPressed: () {
                       //ocultar el teclado
