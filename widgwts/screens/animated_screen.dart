@@ -16,9 +16,10 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   Color _color = Colors.green;
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(10);
   void changeShape() {
-    _width *= 2;
-    _heigth *= 2;
-    _color = Colors.red;
+    final r = Random();
+    _width = r.nextInt(300).toDouble();
+    _heigth = r.nextInt(300).toDouble();
+    _color = Color.fromRGBO(r.nextInt(255), r.nextInt(255), r.nextInt(255), 1);
     // metodo para decir cambiar  propiedades
 
     setState(() {});
