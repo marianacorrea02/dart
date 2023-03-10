@@ -17,7 +17,17 @@ class InputScreen extends StatelessWidget {
           child: Column(
             children: [
               //formularios mas interaccioene
-              TextFormField()
+              TextFormField(
+                // al cambiar de pantalla se enfoca en el espacio a llenars
+                autofocus: true,
+                initialValue: '',
+                //empezar cada palabra con capital
+                textCapitalization: TextCapitalization.words,
+                //capturar el valor
+                onChanged: (value) {
+                  print('value:$value');
+                },
+              ),
             ],
           ),
         ),
