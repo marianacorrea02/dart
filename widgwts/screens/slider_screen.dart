@@ -9,6 +9,7 @@ class SliderScreen extends StatefulWidget {
 
 class _SliderScreenState extends State<SliderScreen> {
   double _sliderValue = 100;
+  bool _sliderEnamle = true;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +25,40 @@ class _SliderScreenState extends State<SliderScreen> {
           min: 50,
           max: 400,
           value: _sliderValue,
+          onChanged: _sliderEnamle
+              ? (value) {
+                  _sliderValue = value;
+                  setState(() {});
+                }
+              : null,
+        ),
+        //el checkbox habilitara si se puede o no mover el slider
+        Checkbox(
+          value: _sliderEnamle,
           onChanged: (value) {
-            _sliderValue = value;
+            _sliderEnamle = value ?? true;
+            setState(() {});
+          },
+        ),
+        //checkbox mas bonito
+        CheckboxListTile(
+          value: _sliderEnamle,
+          onChanged: (value) {
+            _sliderEnamle = value ?? true;
+            setState(() {});
+          },
+        ),
+        Switch(
+          value: _sliderEnamle,
+          onChanged: (value) {
+            _sliderEnamle = value;
+            setState(() {});
+          },
+        ),
+        SwitchListTile.adaptive(
+          value: _sliderEnamle,
+          onChanged: (value) {
+            _sliderEnamle = value;
             setState(() {});
           },
         ),
